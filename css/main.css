@@ -1,0 +1,316 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+html, body {
+	background: #9bc7e4; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9bc7e4 0%, #c2ddef 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9bc7e4), color-stop(100%,#c2ddef)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9bc7e4 0%,#c2ddef 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9bc7e4 0%,#c2ddef 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9bc7e4 0%,#c2ddef 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9bc7e4 0%,#c2ddef 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bc7e4', endColorstr='#c2ddef',GradientType=0 ); /* IE6-9 */
+	overflow: hidden;
+	font-family: "Open Sans";
+}
+
+.before_play h1 {
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+.logo {
+  width:500px;
+  height:375px; 
+  position: absolute; 
+  top:50%;
+  left:50%; 
+  margin-left: -250px; 
+  margin-top: -238px;
+}
+
+.logo img {
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  opacity: 0.6;
+}
+
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.cloud {
+	position: absolute;
+	right: 0;
+	top: 100px;
+}
+.cloud2 {
+	top: 400px;
+	right: 200px;
+}
+
+.wall {
+	position: absolute;
+	right: 0;
+	top: 100px;
+	display: none;
+	width: 400px;
+	height: 488px;
+}
+.star {
+	position: absolute;
+	right: 0;
+	top: 100px;
+	display: none;
+}
+.boum {
+	position: absolute;
+	display: none;
+}
+.score {
+	position: absolute;
+	top: 30px;
+	left: 350px;
+	height: 70px;
+}
+.score div {
+	padding-left: 50px;
+	background-image : url('../img/wall_mini.png');
+	background-repeat: no-repeat;
+	height: 100%;
+	display: inline-block;
+	margin-right: 50px;
+}
+.score span {
+	position: relative;
+	top: 28px;
+	left: 10px;
+	font-size: 20px;
+	color: red;
+}
+.score .scoreStar {
+	background-image : url('../img/star_mini.png');
+}
+.score .scoreStar span {
+	color: yellow;
+}
+.final_wall {
+	color: red;
+}
+.final_star {
+	color: yellow;
+}
+.final_all {
+	font-size: 28px;
+}
+.end_game {
+	display: none;
+	color: white;
+	position: absolute;
+	top: 200px;
+	left: 300px;
+}
+
+.play_again {
+
+}
+
+
+
+
+
+
+
+
+
+.part_wall {
+	position: absolute;
+	height: 488px;
+	width: 108px;
+}
+
+.left_wall {
+	left: 0px;
+	top: 0px;
+	
+}
+.center_wall {
+	left: 67px;
+	top: 21px;
+}
+.right_wall {
+	left: 135px;
+	top: 42px;
+}
+
+ .tridiv {
+  perspective: 800px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-size: 125%;
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+  -webkit-transform:rotateX(-29deg) rotateY(-32deg);
+  -moz-transform:rotateX(-29deg) rotateY(-32deg); 
+  -ms-transform:rotateX(-29deg) rotateY(-32deg); 
+  transform:rotateX(-29deg) rotateY(-32deg);
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.0588235);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+/* .cub-1 styles */
+.cub-1 {
+  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:5em;
+  margin:-2.5em 0 0 -2em;
+}
+.cub-1 .ft {
+  transform:translateZ(1.5em);
+}
+.cub-1 .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.cub-1 .rt, .cub-1 .lt {
+  width:3em;
+  height:5em;
+}
+.cub-1 .tp, .cub-1 .bm {
+  width:4em;
+  height:3em;
+}
+.cub-1 .face {
+  background-color:#FFFFFF;
+}
+/* .cub-2 styles */
+.cub-2 {
+  transform:translate3D(0em, 0em, 0em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:5em;
+  margin:-2.5em 0 0 -2em;
+}
+.cub-2 .ft {
+  transform:translateZ(1.5em);
+}
+.cub-2 .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.cub-2 .rt, .cub-2 .lt {
+  width:3em;
+  height:5em;
+}
+.cub-2 .tp, .cub-2 .bm {
+  width:4em;
+  height:3em;
+}
+.cub-2 .face {
+  background-color:#800000;
+}
+
+
+
+
+
+
+
+
+
+.cape {
+  -webkit-animation: fly 0.4s ease infinite;
+  -webkit-transform-origin: 100% 100%;
+}
+
+
+@-webkit-keyframes fly {
+  0% {
+    -webkit-transform: rotate(4deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(4deg);
+  }
+}
